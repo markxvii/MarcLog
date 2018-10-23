@@ -21,6 +21,8 @@ class BaseConfig(object):
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
+    SQLALCHEMY_RECYCLE = 280
+    SLOW_QUERY = 1
 
     MAIL_SERVER = os.getenv('MAIL_SERVER')
     MAIL_PORT = 587
