@@ -45,7 +45,7 @@ def register_logging(app):
     mail_handler = SMTPHandler(
         mailhost=app.config['MAIL_SERVER'],
         fromaddr=app.config['MAIL_USERNAME'],
-        toaddrs=app.config['ADMIN_EMAIL'],
+        toaddrs=app.config['ADMIN_MAIL'],
         subject='MarcLog发现了程序错误！',
         credentials=(app.config['MAIL_USERNAME'], app.config['MAIL_PASSWORD']))
     mail_handler.setLevel(logging.ERROR)
