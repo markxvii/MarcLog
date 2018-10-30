@@ -27,18 +27,3 @@
         </ul>
     </div>
 {% endif %}
-
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown">
-        切换主题
-    </button>
-    <div class="dropdown-menu">
-        {% for theme_name,display_name in config.THEMES.items() %}
-            <a href="{{ url_for('blog.change_theme',theme_name=theme_name,next=request.full_path) }}"
-               class="dropdown-item">
-                {{ display_name }}
-            </a>
-        {% endfor %}
-    </div>
-</div>

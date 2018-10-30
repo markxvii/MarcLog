@@ -36,7 +36,6 @@ class BaseConfig(object):
     MANAGE_POST_PER_PAGE = 15
     COMMENT_PER_PAGE = 15
 
-    THEMES = {'sketchy': 'Sketchy', 'perfect_blue': 'Perfect Blue'}
     SLOW_QUERY_THRESHOLD = 1
 
 
