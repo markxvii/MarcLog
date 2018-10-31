@@ -11,7 +11,7 @@ CKEDITOR.plugins.setLang("a11yhelp", "et", {
             name: "Redaktori tööriistariba",
             legend: "Press ${toolbarFocus} to navigate to the toolbar. Move to the next and previous toolbar group with TAB and SHIFT+TAB. Move to the next and previous toolbar button with RIGHT ARROW or LEFT ARROW. Press SPACE or ENTER to activate the toolbar button."
         }, {
-            name: "Editor Dialog",
+            name: "Muuda dialoogi",
             legend: "Inside a dialog, press TAB to navigate to the next dialog element, press SHIFT+TAB to move to the previous dialog element, press ENTER to submit the dialog, press ESC to cancel the dialog. When a dialog has multiple tabs, the tab list can be reached either with ALT+F10 or with TAB as part of the dialog tabbing order. With tab list focused, move to the next and previous tab with RIGHT and LEFT ARROW, respectively."
         },
             {
@@ -26,8 +26,8 @@ CKEDITOR.plugins.setLang("a11yhelp", "et", {
                 legend: "Press ${elementsPathFocus} to navigate to the elements path bar. Move to next element button with TAB or RIGHT ARROW. Move to previous button with SHIFT+TAB or LEFT ARROW. Press SPACE or ENTER to select the element in editor."
             }]
     }, {
-        name: "Commands",
-        items: [{name: " Undo command", legend: "Press ${undo}"}, {
+        name: "Käsud",
+        items: [{name: "Tühista käsk", legend: "Press ${undo}"}, {
             name: " Redo command",
             legend: "Press ${redo}"
         }, {name: " Bold command", legend: "Press ${bold}"}, {name: " Italic command", legend: "Press ${italic}"}, {

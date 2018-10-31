@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'thirdtemp/index.html' %}
 {% from 'bootstrap/form.html' import render_form %}
 {% from 'bootstrap/pagination.html' import render_pagination %}
 
@@ -6,32 +6,44 @@
     {{ post.title }}
 {% endblock %}
 
+{% block cover %}
+    <!-- Page Cover -->
+    <header class="masthead"
+            style="background-image: url({{ url_for('static',filename='thirdtemp/img/post-bg.jpg') }})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1>{{ post.title }}</h1>
+                        <h2 class="subheading">分类：<a href="{{ url_for('.show_category',category_id=post.category.id) }}"
+                                                     style="color: white">{{ post.category.name }}</a><br></h2>
+                        <span class="meta">Posted on &nbsp;{{ moment(post.timestamp).format('LL') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
 {% block content %}
-    <div class="page-header">
-        <h1>{{ post.title }}
-            <span class="float-right">
-                {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('admin.edit_post',post_id=post.id) }}" class="btn btn-info btn-sm">Edit</a>
-                    <form action="{{ url_for('admin.delete_post',post_id=post.id,next=url_for('blog.index')) }}"
-                          class="inline">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{ post.body|safe }}
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target=".postLinkModal">分享
+            </button>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('admin.edit_post',post_id=post.id) }}" class="btn btn-info btn-sm">Edit</a>
+                <form action="{{ url_for('admin.delete_post',post_id=post.id,next=url_for('blog.index')) }}"
+                      style="display: inline">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                     <button type="submit" class="btn btn-danger btn-sm"
-                            onclick="return confirm('你确定要删除这篇文章吗？');">删除</button>
-                    </form>
-                {% endif %}
-            </span>
-        </h1>
-        <small>
-            分类：<a href="{{ url_for('.show_category',category_id=post.category.id) }}">{{ post.category.name }}</a><br>
-            发表日期：{{ moment(post.timestamp).format('LL') }}
-        </small>
-    </div>
-    <div class="row">
-        <div class="col-sm-8">
-            {{ post.body|safe }}
+                            onclick="return confirm('你确定要删除这篇文章吗？');">删除
+                    </button>
+                </form>
+            {% endif %}
             <hr>
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".postLinkModal">分享
-            </button>
             <div class="modal fade postLinkModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -50,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="comments" id="comments">
+            <div class="comments" id="comments" style="margin-top: 50px">
                 <h3>{{ comments|length }}条评论
                     <small>
                         <a href="{{ url_for('.show_post',post_id=post.id,page=pagination.pages or 1) }}#comments">查看最新</a>
@@ -136,7 +148,7 @@
                 <div class="tip"><h5>作者设置该文章为只读。</h5></div>
             {% endif %}
         </div>
-        <div class="col-sm-4 sidebar">
+        <div class="col-lg-4 col-md-2 mx-auto sidebar">
             {% include "blog/_sidebar.html" %}
         </div>
     </div>

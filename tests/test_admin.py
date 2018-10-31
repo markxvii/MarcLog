@@ -15,7 +15,7 @@ class AdminTestCase(BaseTestCase):
 
         category=Category(name='Default')
         post=Post(title='testing',category=category,body='testing')
-        comment=Comment(body='test comment',post=post,from_admin=True)
+        comment = Comment(body='thirdtemp comment', post=post, from_admin=True)
         link=Link(name='baidu',url='https://www.baidu.com')
         db.session.add_all([category,post,comment,link])
         db.session.commit()

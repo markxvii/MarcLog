@@ -1,29 +1,33 @@
 {% if links %}
-    <div class="card mb-3">
-        <div class="card-header">友情链接</div>
-        <ul class="list-group list-group-flush">
-            {% for link in links %}
-                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px">
+                友情链接</h3>
+            <ul class="list-group list-group-flush">
+                {% for link in links %}
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endif %}
 
 {% if categories %}
-    <div class="card mb-3">
-        <div class="card-header">分类</div>
-        <ul class="list-group list-group-flush">
-            {% for category in categories %}
-                <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <a href="{{ url_for('blog.show_category',category_id=category.id) }}">
-                        {{ category.name }}
-                    </a>
-                    <span class="badge badge-primary badge-pill">{{ category.posts|length }}</span>
-                </li>
-            {% endfor %}
-
-        </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px">分类</h3>
+            <ul class="list-group list-group-flush">
+                {% for category in categories %}
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <a href="{{ url_for('blog.show_category',category_id=category.id) }}">
+                            {{ category.name }}
+                        </a>
+                        <span class="badge badge-primary badge-pill">{{ category.posts|length }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endif %}

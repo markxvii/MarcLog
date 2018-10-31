@@ -12,7 +12,7 @@ CKEDITOR.plugins.setLang("a11yhelp", "fa", {
             legend: "${toolbarFocus} را برای باز کردن نوار ابزار بفشارید. با کلید Tab و Shift+Tab در مجموعه نوار ابزار بعدی و قبلی حرکت کنید. برای حرکت در کلید نوار ابزار قبلی و بعدی با کلید جهت‌نمای راست و چپ جابجا شوید. کلید Space یا Enter را برای فعال کردن کلید نوار ابزار بفشارید."
         }, {
             name: "پنجره محاورهای ویرایشگر",
-            legend: "Inside a dialog, press TAB to navigate to the next dialog element, press SHIFT+TAB to move to the previous dialog element, press ENTER to submit the dialog, press ESC to cancel the dialog. When a dialog has multiple tabs, the tab list can be reached either with ALT+F10 or with TAB as part of the dialog tabbing order. With tab list focused, move to the next and previous tab with RIGHT and LEFT ARROW, respectively."
+            legend: "در داخل یک پنجره محاوره‌ای، کلید Tab را بفشارید تا به پنجره‌ی بعدی بروید، Shift+Tab برای حرکت به فیلد قبلی، فشردن Enter برای ثبت اطلاعات پنجره‌، فشردن Esc برای لغو پنجره محاوره‌ای و برای پنجره‌هایی که چندین برگه دارند، فشردن Alt+F10 یا Tab برای حرکت در برگه ها. وقتی بر فهرست برگه ها هستید، به صفحه بعدی و قبلی با کلید های راستی و چپ حرکت کنید."
         }, {
             name: "منوی متنی ویرایشگر",
             legend: "${contextMenu} یا کلید برنامههای کاربردی را برای باز کردن منوی متن را بفشارید. سپس میتوانید برای حرکت به گزینه بعدی منو با کلید Tab و یا کلید جهتنمای پایین جابجا شوید. حرکت به گزینه قبلی با Shift+Tab یا کلید جهتنمای بالا. فشردن Space یا Enter برای انتخاب یک گزینه از منو. باز کردن زیر شاخه گزینه منو جاری با کلید Space یا Enter و یا کلید جهتنمای راست و چپ. بازگشت به منوی والد با کلید Esc یا کلید جهتنمای چپ. بستن منوی متن با Esc."
@@ -47,9 +47,9 @@ CKEDITOR.plugins.setLang("a11yhelp", "fa", {
                     name: "دسترسی به فضای دستور بعدی",
                     legend: "برای دسترسی به نزدیک‌ترین فضای تمرکز غیر قابل دسترس، ${accessNextSpace} را پس از علامت هشتک بفشارید، برای مثال:  دو عنصر مجاور HR -خط افقی-. کلید ترکیبی را برای رسیدن به فضای تمرکز تکرار کنید."
                 }, {name: "راهنمای دسترسی", legend: "فشردن ${a11yHelp}"}, {
-                    name: " Paste as plain text",
-                    legend: "Press ${pastetext}",
-                    legendEdge: "Press ${pastetext}, followed by ${paste}"
+                    name: "چسباندن به عنوان متن ساده",
+                    legend: "فشردن ${pastetext}",
+                    legendEdge: "فشردن ${pastetext}، همراه با ${paste}"
                 }]
         }],
     tab: "برگه",
