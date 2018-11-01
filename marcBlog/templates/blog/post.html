@@ -13,7 +13,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="col-lg-9 col-md-10 mx-auto">
                     <div class="post-heading">
                         <h1>{{ post.title }}</h1>
                         <h2 class="subheading">分类：<a href="{{ url_for('.show_category',category_id=post.category.id) }}"
@@ -29,7 +29,7 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-lg-10 col-md-10 mx-auto">
+        <div class="col-lg-9 col-md-10 mx-auto">
             {{ post.body|safe }}
             <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target=".postLinkModal">分享
             </button>
@@ -148,7 +148,7 @@
                 <div class="tip"><h5>作者设置该文章为只读。</h5></div>
             {% endif %}
         </div>
-        <div class="col-lg-2 col-md-2 mx-auto sidebar">
+        <div class="col-lg-3 col-md-2 mx-auto sidebar">
             {% include "blog/_sidebar.html" %}
         </div>
     </div>
