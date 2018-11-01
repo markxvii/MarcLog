@@ -12,7 +12,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="col-lg-10 col-md-10 mx-auto">
                     <div class="site-heading">
                         <h1>{{ admin.blog_title|default("Marc's blog") }}</h1>
                         <span class="subheading">{{ admin.blog_sub_title|default('Music is the answer.') }}</span>
@@ -26,10 +26,10 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-10 col-md-10 mx-auto">
             {% include 'blog/_posts.html' %}
         </div>
-        <div class="col-lg-4 col-md-2 mx-auto sidebar">
+        <div class="col-lg-2 col-md-2 mx-auto sidebar">
             {% include 'blog/_sidebar.html' %}
         </div>
     </div>
