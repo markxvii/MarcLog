@@ -1,11 +1,11 @@
 {% if links %}
     <div class="panel panel-default" style="margin-left: 40px;">
         <div class="panel-body">
-            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px">
+            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px;font-size: 18px;">
                 友情链接</h3>
             <ul class="list-group list-group-flush">
                 {% for link in links %}
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" style="font-size: 15px;">
                         <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
                     </li>
                 {% endfor %}
@@ -17,10 +17,10 @@
 {% if categories %}
     <div class="panel panel-default" style="margin-left: 40px;">
         <div class="panel-body">
-            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px">分类</h3>
+            <h3 class="sidebar-header" style="margin-top: 33px;margin-left: 15px;font-size: 18px;">分类</h3>
             <ul class="list-group list-group-flush">
                 {% for category in categories %}
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" style="font-size: 15px;">
                         <a href="{{ url_for('blog.show_category',category_id=category.id) }}">
                             {{ category.name }}
                         </a>
