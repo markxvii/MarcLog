@@ -1,21 +1,21 @@
 {% if posts %}
     {% for post in posts %}
         <div class="post-preview">
-            <a href="{{ url_for('.show_post',post_id=post.id) }}">
-                <h2 class="post-title">
+            <a href="{{ url_for('.show_post',post_id=post.id) }}" >
+                <h2 class="post-title" style="font-size: 28px">
                     {{ post.title }}
                 </h2>
-                <h3 class="post-subtitle">
+                <h3 class="post-subtitle" style="font-size: 15px">
                     {{ post.body|striptags|truncate(100) }}
                 </h3>
             </a>
-            <small>
+            <small style="font-size: 13px">
                 评论：<a
                     href="{{ url_for('.show_post',post_id=post.id) }}#comments">{{ post.comments|length }}</a>
                 分类：<a
                     href="{{ url_for('.show_category',category_id=post.category.id) }}">{{ post.category.name }}</a>
             </small>
-            <p class="post-meta">Posted on &nbsp;{{ moment(post.timestamp).format('LL') }}</p>
+            <p class="post-meta" style="font-size: 13px">Posted on &nbsp;{{ moment(post.timestamp).format('LL') }}</p>
         </div>
         {% if not loop.last %}
             <hr>
