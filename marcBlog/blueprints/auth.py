@@ -12,7 +12,7 @@ from marcBlog.utils import redirect_back
 auth_bp = Blueprint('auth', __name__)
 
 
-@auth_bp.route('/login', methods=['GET', 'POST'])
+@auth_bp.route('/administrator', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('blog.index'))

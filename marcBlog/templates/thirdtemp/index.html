@@ -155,12 +155,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Designed by Marc Yin, all rights reserved. -
-                        {% if current_user.is_authenticated %}
-                            <a href="{{ url_for('auth.logout',next=request.full_path) }}">Logout</a>
-                        {% else %}
-                            <a href="{{ url_for('auth.login',next=request.full_path) }}">Login</a>
-                        {% endif %}
+                    <p class="copyright text-muted">Copyright &copy; Designed by Marc Yin, all rights reserved.
                     </p>
                 </div>
             </div>
